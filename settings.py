@@ -42,7 +42,8 @@ class Settings(BaseSettings):
         return (
             f"postgresql+{engine_}://"
             f"{self.DB_USER}:{self.DB_PASSWORD}@"
-            f"localhost:5432/{self.DB_NAME}")
+            f"localhost:5432/{self.DB_NAME}"
+        )
 
     def sqlite_dsn(self) -> str:
         return f"sqlite+aiosqlite:///./{self.DB_NAME}.db"
